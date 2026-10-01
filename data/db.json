@@ -1,14 +1,19 @@
-
 {
   "usuarios": [],
   "sedes": [
-       {
+    {
       "id": "1",
       "nombre": "Sede de prueba",
       "direccion": "Av. Libertador 123"
+    },
+    {
+      "nombre": "Sede UNGS",
+      "direccion": "Juan María Gutiérrez 1150",
+      "id": "AMqfuNTm0YA"
     }
   ],
   "charlas": [],
   "postulaciones": [],
-  "notificaciones": []
+  "notificaciones": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

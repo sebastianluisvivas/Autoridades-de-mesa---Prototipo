@@ -1,10 +1,3 @@
-/* Gestiona la presentación y actualización de la interfaz relacionada con las sedes
-La idea es que sedeView.js se ocupe de mostrar información en pantalla, pero no de decidir reglas de negocio ni de acceder directamente a db.json.
-
-Por ahora tendrá una única responsabilidad: mostrar las sedes que recibe */
-
-
-
 // Gestiona la presentación y actualización de la interfaz relacionada con las sedes.
 
 function mostrarSedes(sedes) {
@@ -20,3 +13,30 @@ function mostrarSedes(sedes) {
         lista.appendChild(elemento);
     });
 }
+
+async function manejarRegistroSede(evento) {
+    // Captura la interacción del usuario y muestra el resultado en la interfaz.
+
+    evento.preventDefault();
+
+    const nombre = document.getElementById("nombre-sede").value.trim();
+    const direccion = document.getElementById("direccion-sede").value.trim();
+    const mensaje = document.getElementById("mensaje");
+
+    try {
+        await registrarSede(nombre, direccion);
+
+        mensaje.textContent = "Sede registrada correctamente.";
+
+        document.getElementById("form-sede").reset();
+
+        const sedes = await obtenerSedes();
+        mostrarSedes(sedes);
+
+    } catch (error) {
+        mensaje.textContent = error.message;
+    }
+}
+
+document.getElementById("form-sede")
+    .addEventListener("submit", manejarRegistroSede);
