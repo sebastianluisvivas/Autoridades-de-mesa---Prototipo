@@ -1,0 +1,14 @@
+
+{
+  "usuarios": [],
+  "sedes": [
+       {
+      "id": "1",
+      "nombre": "Sede de prueba",
+      "direccion": "Av. Libertador 123"
+    }
+  ],
+  "charlas": [],
+  "postulaciones": [],
+  "notificaciones": []
+}

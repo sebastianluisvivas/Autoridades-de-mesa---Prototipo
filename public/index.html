@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoridades de Mesa</title>
+</head>
+
+<body>
+
+    <h1>Autoridades de Mesa</h1>
+
+    <section>
+        <h2>Registrar sede</h2>
+
+        <form id="form-sede">
+
+            <div>
+                <label for="nombre-sede">Nombre de la sede:</label>
+                <input type="text" id="nombre-sede" required>
+            </div>
+
+            <div>
+                <label for="direccion-sede">Dirección:</label>
+                <input type="text" id="direccion-sede" required>
+            </div>
+
+            <button type="submit">Registrar sede</button>
+
+        </form>
+
+        <p id="mensaje"></p>
+    </section>
+
+    <section>
+        <h2>Sedes registradas</h2>
+
+        <ul id="lista-sedes"></ul>
+    </section>
+    <script src="js/sedeRepositorio.js"></script>
+    <script src="js/vistaSede.js"></script>
+    <script src="js/sedeLogica.js"></script>
+
+    <script>
+    cargarSedes();
+    </script>
+
+
+    
+
+</body>
+</html>
