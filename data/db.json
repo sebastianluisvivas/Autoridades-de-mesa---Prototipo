@@ -9,10 +9,27 @@
     {
       "nombre": "Sede UNGS",
       "direccion": "Juan María Gutiérrez 1150",
-      "id": "AMqfuNTm0YA"
+      "id": "2"
     }
   ],
-  "charlas": [],
+  "charlas": [
+    {
+        "id": "1",
+        "nombre": "Charla introductoria para autoridades de mesa",
+        "tema": "Introducción al rol de autoridad de mesa",
+        "fecha": "2026-10-15",
+        "hora": "18:00",
+        "sedeId": "2"
+    },
+    {
+        "id": "2",
+        "nombre": "Capacitación sobre el proceso electoral",
+        "tema": "Procedimiento y responsabilidades durante la jornada electoral",
+        "fecha": "2026-10-20",
+        "hora": "18:00",
+        "sedeId": "2"
+    }
+],
   "postulaciones": [],
   "notificaciones": [],
   "$schema": "./node_modules/json-server/schema.json"
