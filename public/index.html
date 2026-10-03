@@ -54,13 +54,104 @@
     <section>
     <h2>Ubicación</h2>
 
+    <section>
+    <h2>Inscribirse como postulante</h2>
+
+    <form id="form-postulacion">
+
+        <div>
+            <label for="distrito">Distrito electoral:</label>
+            <select id="distrito" required>
+                <option value="">Seleccionar distrito</option>
+                <option value="San Miguel">San Miguel</option>
+                <option value="José C. Paz">José C. Paz</option>
+                <option value="Malvinas Argentinas">Malvinas Argentinas</option>
+                <option value="Tigre">Tigre</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="nombre-postulante">Nombre:</label>
+            <input type="text" id="nombre-postulante" required>
+        </div>
+
+        <div>
+            <label for="apellido-postulante">Apellido:</label>
+            <input type="text" id="apellido-postulante" required>
+        </div>
+
+        <div>
+            <label for="dni-postulante">DNI:</label>
+            <input type="text" id="dni-postulante" required>
+        </div>
+
+        <div>
+            <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" required>
+        </div>
+
+        <div>
+            <label for="direccion-postulante">Dirección actual:</label>
+            <input type="text" id="direccion-postulante" required>
+        </div>
+
+        <div>
+            <label for="telefono-postulante">Teléfono:</label>
+            <input type="tel" id="telefono-postulante" required>
+        </div>
+
+        <div>
+            <label for="correo-postulante">Correo electrónico:</label>
+            <input type="email" id="correo-postulante" required>
+        </div>
+
+        <div>
+            <label for="autoridad-previa">¿Fue autoridad de mesa anteriormente?</label>
+            <select id="autoridad-previa" required>
+                <option value="">Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="afiliado">¿Está afiliado a alguna agrupación política?</label>
+            <select id="afiliado" required>
+                <option value="">Seleccionar</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="agrupacion">Agrupación política:</label>
+            <input type="text" id="agrupacion">
+        </div>
+
+        <div>
+            <label for="charla-interes">Interés en participar de una charla:</label>
+            <select id="charla-interes">
+                <option value="">No deseo indicar</option>
+            </select>
+        </div>
+
+        <button type="submit">Confirmar inscripción</button>
+
+    </form>
+
+    <p id="mensaje-postulacion"></p>
+</section>    
+
+
     <div id="mapa"></div>
     </section>
 
     </section>  
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script src="js/mapa.js"></script>
+    
     <script src="js/sedeRepositorio.js"></script> 
     <script src="js/sedeLogica.js"></script>
     <script src="js/vistaSede.js"></script>
