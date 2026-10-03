@@ -55,4 +55,16 @@ async function registrarPostulacion(datos) {
     };
 
     return await guardarPostulacion(postulacion);
+    }
+
+
+    
+
+    async function cargarCharlasDisponibles() {
+    try {
+        const charlas = await obtenerCharlas();
+        mostrarCharlasDisponibles(charlas);
+    } catch (error) {
+        console.error("No se pudieron cargar las charlas:", error);
+    }
 }

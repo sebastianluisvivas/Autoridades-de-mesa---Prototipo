@@ -39,3 +39,21 @@ async function manejarRegistroPostulacion(evento) {
         mensaje.textContent = error.message;
     }
 }
+
+
+
+    function mostrarCharlasDisponibles(charlas) {
+    const seleccion = document.getElementById("charla-interes");
+
+    charlas.forEach(charla => {
+        const opcion = document.createElement("option");
+
+        opcion.value = charla.id;
+        opcion.textContent =
+            `${charla.nombre} - ${charla.fecha} ${charla.hora}`;
+
+        seleccion.appendChild(opcion);
+    });
+}
+
+cargarCharlasDisponibles();
