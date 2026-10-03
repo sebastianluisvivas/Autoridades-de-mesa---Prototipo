@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autoridades de Mesa</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
 </head>
 
 <body>
@@ -48,10 +51,16 @@
 
     <ul id="lista-ubicaciones"></ul>
 
+    <section>
+    <h2>Ubicación</h2>
+
+    <div id="mapa"></div>
+    </section>
+
     </section>  
 
-
-    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/mapa.js"></script>
     <script src="js/sedeRepositorio.js"></script> 
     <script src="js/sedeLogica.js"></script>
     <script src="js/vistaSede.js"></script>

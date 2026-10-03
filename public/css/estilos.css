@@ -59,5 +59,9 @@ button {
 }
 
 #lista-sedes li {
-    margin-bottom: 8px;
-}
+    margin-bottom: 8px; }
+
+#mapa {
+    height: 400px;
+    width: 100%;
+}    

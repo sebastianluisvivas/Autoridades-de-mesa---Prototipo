@@ -28,6 +28,10 @@ function mostrarCharlas(charlas, sedes) {
 
         const resultados = ubicacion.direccionesNormalizadas;
 
+        const resultado = resultados[0];
+
+        mostrarMapa(resultado.coordenadas);
+
         const lista = document.getElementById("lista-ubicaciones");
 
         lista.innerHTML = "";
