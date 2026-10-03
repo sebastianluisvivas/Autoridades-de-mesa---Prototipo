@@ -25,6 +25,28 @@ function mostrarCharlas(charlas, sedes) {
         const ubicacion = await obtenerUbicacionCharla(charla);
 
         console.log("Respuesta de USIG:", ubicacion);
+
+        const resultados = ubicacion.direccionesNormalizadas;
+
+        const lista = document.getElementById("lista-ubicaciones");
+
+        lista.innerHTML = "";
+
+        resultados.forEach((resultado, indice) => {
+            const elemento = document.createElement("li");
+
+            elemento.textContent =
+                `${indice + 1}. ${resultado.direccion}`;
+
+            lista.appendChild(elemento);
+
+            console.log(
+                `Resultado ${indice + 1}:`,
+                resultado.direccion,
+                resultado.coordenadas
+            );
+        });
+
     } catch (error) {
         console.error("Error al obtener ubicación:", error);
     }

@@ -7,10 +7,11 @@
       "direccion": "Av. Libertador 123"
     },
     {
-      "nombre": "Sede UNGS",
-      "direccion": "Juan María Gutiérrez 1150",
-      "id": "2"
-    }
+    "nombre": "Sede prueba USIG",
+    "direccion":"Av. Dr. Ricardo Balbín 1617, San Miguel"
+,
+    "id": "2"
+}
   ],
   "charlas": [
     {
