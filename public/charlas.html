@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlas - Autoridades de Mesa</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Charlas disponibles</h1>
+
+        <p>
+            Consultá las charlas disponibles y su ubicación.
+        </p>
+
+        <section>
+            <h2>Charlas</h2>
+
+            <ul id="lista-charlas"></ul>
+        </section>
+
+        <section>
+            <h2>Ubicación de la charla</h2>
+
+            <ul id="lista-ubicaciones"></ul>
+        </section>
+
+        <section>
+            <h2>Ubicación</h2>
+
+            <div id="mapa"></div>
+        </section>
+
+        <p>
+            <a href="index.html">Volver al inicio</a>
+        </p>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="js/sedeRepositorio.js"></script>
+    <script src="js/sedeLogica.js"></script>
+
+    <script src="js/charlaRepositorio.js"></script>
+    <script src="js/usigRepositorio.js"></script>
+    <script src="js/charlaLogica.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/vistaCharla.js"></script>
+
+    <script>
+        cargarCharlas();
+    </script>
+
+</body>
+</html>
