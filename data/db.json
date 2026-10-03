@@ -7,31 +7,47 @@
       "direccion": "Av. Libertador 123"
     },
     {
-    "nombre": "Sede prueba USIG",
-    "direccion":"Av. Dr. Ricardo Balbín 1617, San Miguel"
-,
-    "id": "2"
-}
+      "nombre": "Sede prueba USIG",
+      "direccion": "Av. Dr. Ricardo Balbín 1617, San Miguel",
+      "id": "2"
+    }
   ],
   "charlas": [
     {
-        "id": "1",
-        "nombre": "Charla introductoria para autoridades de mesa",
-        "tema": "Introducción al rol de autoridad de mesa",
-        "fecha": "2026-10-15",
-        "hora": "18:00",
-        "sedeId": "2"
+      "id": "1",
+      "nombre": "Charla introductoria para autoridades de mesa",
+      "tema": "Introducción al rol de autoridad de mesa",
+      "fecha": "2026-10-15",
+      "hora": "18:00",
+      "sedeId": "2"
     },
     {
-        "id": "2",
-        "nombre": "Capacitación sobre el proceso electoral",
-        "tema": "Procedimiento y responsabilidades durante la jornada electoral",
-        "fecha": "2026-10-20",
-        "hora": "18:00",
-        "sedeId": "2"
+      "id": "2",
+      "nombre": "Capacitación sobre el proceso electoral",
+      "tema": "Procedimiento y responsabilidades durante la jornada electoral",
+      "fecha": "2026-10-20",
+      "hora": "18:00",
+      "sedeId": "2"
     }
-],
-  "postulaciones": [],
+  ],
+  "postulaciones": [
+    {
+      "distrito": "José C. Paz",
+      "nombre": "Sebastian",
+      "apellido": "Vivas",
+      "dni": "11123456",
+      "fechaNacimiento": "1885-12-12",
+      "direccion": "prueba 123",
+      "telefono": "1133950314",
+      "correo": "prueba@hotmail.com",
+      "autoridadPrevia": "si",
+      "afiliado": "si",
+      "agrupacion": "prueba",
+      "charlaInteres": "",
+      "estado": "pendiente",
+      "id": "SLdRJz34Dno"
+    }
+  ],
   "notificaciones": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
