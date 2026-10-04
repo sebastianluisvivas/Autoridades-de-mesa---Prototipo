@@ -19,7 +19,7 @@
       "tema": "Introducción al rol de autoridad de mesa",
       "fecha": "2026-10-15",
       "hora": "18:00",
-      "sedeId": "2"
+      "sedeId": "1"
     },
     {
       "id": "2",
@@ -46,8 +46,88 @@
       "charlaInteres": "",
       "estado": "pendiente",
       "id": "SLdRJz34Dno"
+    },
+    {
+      "distrito": "Tigre",
+      "nombre": "PruebaCharlaInteres",
+      "apellido": "Prueba",
+      "dni": "11132",
+      "fechaNacimiento": "2018-09-12",
+      "direccion": "asd 123",
+      "telefono": "1133950314",
+      "correo": "asdasd@hotmail.com",
+      "autoridadPrevia": "no",
+      "afiliado": "si",
+      "agrupacion": "test",
+      "charlaInteres": "1",
+      "estado": "pendiente",
+      "id": "Gmei2O8EmGA"
+    },
+    {
+      "distrito": "Prueba",
+      "nombre": "Persistencia",
+      "apellido": "Test",
+      "dni": "99999999",
+      "fechaNacimiento": "2000-01-01",
+      "direccion": "Test 123",
+      "telefono": "1111111111",
+      "correo": "test@test.com",
+      "autoridadPrevia": "no",
+      "afiliado": "no",
+      "agrupacion": "",
+      "charlaInteres": "2",
+      "estado": "pendiente",
+      "id": "co67SKc74xs"
+    },
+    {
+      "distrito": "San Miguel",
+      "nombre": "PRUEBAPOSTULACION",
+      "apellido": "SEDEDOS",
+      "dni": "888888",
+      "fechaNacimiento": "2008-08-08",
+      "direccion": "asdasd08",
+      "telefono": "8888888",
+      "correo": "asd888@hotmail.com",
+      "autoridadPrevia": "no",
+      "afiliado": "no",
+      "agrupacion": "",
+      "charlaInteres": "2",
+      "estado": "pendiente",
+      "id": "jZJdeO3moj4"
+    },
+    {
+      "distrito": "Tigre",
+      "nombre": "prueba77",
+      "apellido": "prueba77",
+      "dni": "7777",
+      "fechaNacimiento": "2007-07-07",
+      "direccion": "asdasd7777",
+      "telefono": "777777",
+      "correo": "77777asd@hotmail.com",
+      "autoridadPrevia": "si",
+      "afiliado": "si",
+      "agrupacion": "siete",
+      "charlaInteres": "2",
+      "estado": "pendiente",
+      "id": "dGNm9QB3n1I"
+    },
+    {
+      "distrito": "San Miguel",
+      "nombre": "PRUEBAOTRAVEZ",
+      "apellido": "PRUEBASEDEdos",
+      "dni": "222222",
+      "fechaNacimiento": "2022-02-02",
+      "direccion": "asd2222",
+      "telefono": "22222",
+      "correo": "2222@hotmail.com",
+      "autoridadPrevia": "si",
+      "afiliado": "si",
+      "agrupacion": "dos",
+      "charlaInteres": "2",
+      "estado": "pendiente",
+      "id": "7zkHavasKSk"
     }
   ],
   "notificaciones": [],
-  "$schema": "../node_modules/json-server/schema.json"
+  "$schema": "./node_modules/json-server/schema.json"
 }
