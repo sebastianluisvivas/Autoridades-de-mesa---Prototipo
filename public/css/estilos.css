@@ -65,3 +65,8 @@ button {
     height: 400px;
     width: 100%;
 }    
+
+#charlas-interes label {
+    display: block;
+    margin: 4px 0;
+}

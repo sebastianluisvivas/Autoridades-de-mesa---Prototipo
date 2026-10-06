@@ -21,7 +21,7 @@ async function manejarRegistroPostulacion(evento) {
         autoridadPrevia: document.getElementById("autoridad-previa").value,
         afiliado: document.getElementById("afiliado").value,
         agrupacion: document.getElementById("agrupacion").value.trim(),
-        charlaInteres: document.getElementById("charla-interes").value
+        charlasInteres: obtenerCharlasSeleccionadas()
     };
 
     const mensaje = document.getElementById("mensaje-postulacion");
@@ -43,17 +43,32 @@ async function manejarRegistroPostulacion(evento) {
 
 
     function mostrarCharlasDisponibles(charlas) {
-    const seleccion = document.getElementById("charla-interes");
+    const contenedor = document.getElementById("charlas-interes");
+
+    if (charlas.length === 0) {
+        const aviso = document.createElement("p");
+        aviso.textContent = "No hay charlas disponibles por el momento.";
+        contenedor.appendChild(aviso);
+        return;
+    }
 
     charlas.forEach(charla => {
-        const opcion = document.createElement("option");
+        const etiqueta = document.createElement("label");
+        const casilla = document.createElement("input");
 
-        opcion.value = charla.id;
-        opcion.textContent =
-            `${charla.nombre} - ${charla.fecha} ${charla.hora}`;
+        casilla.type = "checkbox";
+        casilla.name = "charla-interes";
+        casilla.value = charla.id;
 
-        seleccion.appendChild(opcion);
+        etiqueta.append(casilla, ` ${charla.nombre} - ${charla.fecha} ${charla.hora}`);
+        contenedor.appendChild(etiqueta);
     });
+}
+
+function obtenerCharlasSeleccionadas() {
+    const casillasMarcadas = document.querySelectorAll('input[name="charla-interes"]:checked');
+
+    return Array.from(casillasMarcadas).map(casilla => casilla.value);
 }
 
 cargarCharlasDisponibles();
