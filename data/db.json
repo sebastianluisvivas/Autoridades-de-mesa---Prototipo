@@ -28,6 +28,15 @@
       "fecha": "2026-10-20",
       "hora": "18:00",
       "sedeId": "2"
+    },
+
+    {
+      "id": "3",
+      "nombre": "Capacitación sobre el proceso electoral DOS",
+      "tema": "Procedimiento y responsabilidades durante la jornada electoral DOS",
+      "fecha": "2026-10-20",
+      "hora": "18:00",
+      "sedeId": "2"
     }
   ],
   "postulaciones": [

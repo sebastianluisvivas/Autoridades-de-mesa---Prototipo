@@ -38,6 +38,17 @@ async function registrarPostulacion(datos) {
         throw new Error("Debe indicar la agrupación política.");
     }
 
+    const charlasInteres = datos.charlasInteres || [];
+
+if (charlasInteres.length > 1) {
+    const charlas = await obtenerCharlas();
+
+    if (tieneCharlasSuperpuestas(charlasInteres, charlas)) {
+        throw new Error("Seleccionaste charlas en el mismo día y horario. Elegí solo una de ellas.");
+    }
+}
+
+
     const postulacion = {
         distrito: datos.distrito,
         nombre: datos.nombre,
@@ -50,7 +61,7 @@ async function registrarPostulacion(datos) {
         autoridadPrevia: datos.autoridadPrevia,
         afiliado: datos.afiliado,
         agrupacion: datos.agrupacion || "",
-        charlaInteres: datos.charlaInteres || "",
+        charlasInteres: charlasInteres,
         estado: "pendiente"
     };
 
@@ -67,4 +78,12 @@ async function registrarPostulacion(datos) {
     } catch (error) {
         console.error("No se pudieron cargar las charlas:", error);
     }
+    
+}
+function tieneCharlasSuperpuestas(idsSeleccionados, charlas) {
+    const horarios = charlas
+        .filter(charla => idsSeleccionados.includes(charla.id))
+        .map(charla => `${charla.fecha} ${charla.hora}`);
+
+    return new Set(horarios).size !== horarios.length;
 }
