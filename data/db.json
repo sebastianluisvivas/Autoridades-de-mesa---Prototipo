@@ -1,5 +1,12 @@
 {
-  "usuarios": [],
+"usuarios": [
+  {
+    "id": "1",
+    "usuario": "administrador123",
+    "contrasena": "123",
+    "rol": "administrador"
+  }
+],
   "sedes": [
     {
       "id": "1",

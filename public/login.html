@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso administrador - Autoridades de Mesa</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Acceso administrador</h1>
+
+        <section>
+            <form id="form-login">
+
+                <div>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" required>
+                </div>
+
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" required>
+                </div>
+
+                <button type="submit">Ingresar</button>
+
+            </form>
+
+            <p id="mensaje-login"></p>
+        </section>
+
+        <p>
+            <a href="index.html">Volver al inicio</a>
+        </p>
+
+    </main>
+
+    <script src="js/repositorio/usuarioRepositorio.js"></script>
+    <script src="js/logica/sesionLogica.js"></script>
+    <script src="js/vistas/vistaLogin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Autoridades de Mesa</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Gestión de postulaciones</h1>
+
+        <button type="button" id="boton-cerrar-sesion">Cerrar sesión</button>
+
+        <section>
+            <h2>Postulantes registrados</h2>
+
+            <p id="mensaje-admin"></p>
+
+            <table id="tabla-postulaciones">
+                <thead>
+                    <tr>
+                        <th>Apellido</th>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Distrito</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-postulaciones"></tbody>
+            </table>
+        </section>
+
+        <section id="seccion-detalle" style="display: none;">
+            <h2>Detalle de la postulación</h2>
+            <dl id="detalle-postulacion"></dl>
+        </section>
+
+    </main>
+
+    <script src="js/repositorio/charlaRepositorio.js"></script>
+    <script src="js/repositorio/postulacionRepositorio.js"></script>
+    <script src="js/logica/sesionLogica.js"></script>
+    <script src="js/logica/evaluacionLogica.js"></script>
+    <script src="js/vistas/vistaAdmin.js"></script>
+
+</body>
+</html>

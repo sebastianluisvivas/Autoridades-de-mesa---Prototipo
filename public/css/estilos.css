@@ -70,3 +70,19 @@ button {
     display: block;
     margin: 4px 0;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 6px;
+}

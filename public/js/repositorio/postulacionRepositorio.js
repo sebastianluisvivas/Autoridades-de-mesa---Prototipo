@@ -17,3 +17,13 @@ async function guardarPostulacion(postulacion) {
 
     return await respuesta.json();
 }
+
+async function obtenerPostulaciones() {
+    const respuesta = await fetch(API_URL_POSTULACIONES);
+
+    if (!respuesta.ok) {
+        throw new Error("No se pudieron obtener las postulaciones.");
+    }
+
+    return await respuesta.json();
+}
