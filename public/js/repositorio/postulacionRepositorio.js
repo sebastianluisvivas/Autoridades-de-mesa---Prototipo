@@ -1,45 +1,29 @@
-// Gestiona el acceso a los datos de las postulaciones mediante la API de json-server
-
-const API_URL_POSTULACIONES = "http://localhost:3000/postulaciones";
-
-async function guardarPostulacion(postulacion) {
-    const respuesta = await fetch(API_URL_POSTULACIONES, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postulacion)
-    });
-
-    if (!respuesta.ok) {
-        throw new Error("No se pudo registrar la postulación.");
-    }
-
-    return await respuesta.json();
-}
+// Gestiona el acceso a los datos de las postulaciones.
 
 async function obtenerPostulaciones() {
-    const respuesta = await fetch(API_URL_POSTULACIONES);
+    return leerColeccion("postulaciones");
+}
 
-    if (!respuesta.ok) {
-        throw new Error("No se pudieron obtener las postulaciones.");
-    }
+async function guardarPostulacion(postulacion) {
+    const postulaciones = leerColeccion("postulaciones");
+    const nuevaPostulacion = { ...postulacion, id: generarId() };
 
-    return await respuesta.json();
+    postulaciones.push(nuevaPostulacion);
+    guardarColeccion("postulaciones", postulaciones);
+
+    return nuevaPostulacion;
 }
 
 async function actualizarPostulacion(id, cambios) {
-    const respuesta = await fetch(`${API_URL_POSTULACIONES}/${id}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(cambios)
-    });
+    const postulaciones = leerColeccion("postulaciones");
+    const indice = postulaciones.findIndex(postulacion => postulacion.id === id);
 
-    if (!respuesta.ok) {
-        throw new Error("No se pudo actualizar la postulación.");
+    if (indice === -1) {
+        throw new Error("No se encontró la postulación.");
     }
 
-    return await respuesta.json();
+    postulaciones[indice] = { ...postulaciones[indice], ...cambios };
+    guardarColeccion("postulaciones", postulaciones);
+
+    return postulaciones[indice];
 }

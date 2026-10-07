@@ -1,29 +1,15 @@
-// Gestiona el acceso a los datos de las sedes mediante la API de json-server.
-
-const apiUrlSedes = "http://localhost:3000/sedes";
+// Gestiona el acceso a los datos de las sedes.
 
 async function obtenerSedes() {
-    const respuesta = await fetch(apiUrlSedes);
-
-    if (!respuesta.ok) {
-        throw new Error("No se pudieron obtener las sedes.");
-    }
-
-    return await respuesta.json();
+    return leerColeccion("sedes");
 }
 
 async function guardarSede(sede) {
-    const respuesta = await fetch(apiUrlSedes, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sede)
-    });
+    const sedes = leerColeccion("sedes");
+    const nuevaSede = { ...sede, id: generarId() };
 
-    if (!respuesta.ok) {
-        throw new Error("No se pudo guardar la sede.");
-    }
+    sedes.push(nuevaSede);
+    guardarColeccion("sedes", sedes);
 
-    return await respuesta.json();
+    return nuevaSede;
 }
