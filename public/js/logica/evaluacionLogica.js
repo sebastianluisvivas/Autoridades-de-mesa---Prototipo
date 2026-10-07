@@ -14,3 +14,35 @@ async function obtenerPostulacionesParaEvaluar() {
         })
     }));
 }
+
+
+function validarPostulacionPendiente(postulacion) {
+    if (!postulacion) {
+        throw new Error("Debe seleccionar una postulación.");
+    }
+
+    if (postulacion.estado !== "pendiente") {
+        throw new Error("La postulación ya fue evaluada.");
+    }
+}
+
+async function aprobarPostulacion(postulacion) {
+    validarPostulacionPendiente(postulacion);
+
+    return await actualizarPostulacion(postulacion.id, {
+        estado: "aprobada"
+    });
+}
+
+async function rechazarPostulacion(postulacion, motivo) {
+    validarPostulacionPendiente(postulacion);
+
+    if (!motivo) {
+        throw new Error("Debe ingresar el motivo del rechazo.");
+    }
+
+    return await actualizarPostulacion(postulacion.id, {
+        estado: "rechazada",
+        motivoRechazo: motivo
+    });
+}

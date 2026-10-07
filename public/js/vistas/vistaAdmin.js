@@ -4,6 +4,14 @@ if (!haySesionAdministrador()) {
     window.location.href = "login.html";
 }
 
+let postulacionSeleccionada = null;
+
+document.getElementById("boton-aprobar")
+    .addEventListener("click", manejarAprobacion);
+
+document.getElementById("boton-rechazar")
+    .addEventListener("click", manejarRechazo);
+
 document.getElementById("boton-cerrar-sesion")
     .addEventListener("click", manejarCierreSesion);
 
@@ -54,6 +62,7 @@ function mostrarPostulaciones(postulaciones) {
 }
 
 function mostrarDetallePostulacion(postulacion) {
+    postulacionSeleccionada = postulacion;
     const detalle = document.getElementById("detalle-postulacion");
 
     const campos = [
@@ -71,6 +80,9 @@ function mostrarDetallePostulacion(postulacion) {
             : "Ninguna"],
         ["Estado", postulacion.estado]
     ];
+    if (postulacion.estado === "rechazada") {
+    campos.push(["Motivo del rechazo", postulacion.motivoRechazo]);
+    }
 
     detalle.innerHTML = "";
 
@@ -82,10 +94,46 @@ function mostrarDetallePostulacion(postulacion) {
         detalle.append(termino, definicion);
     });
 
+    document.getElementById("motivo-rechazo").value = "";
+    document.getElementById("mensaje-evaluacion").textContent = "";
+
+    document.getElementById("acciones-evaluacion").style.display =
+        postulacion.estado === "pendiente" ? "block" : "none";
+
     document.getElementById("seccion-detalle").style.display = "block";
 }
 
 function manejarCierreSesion() {
     cerrarSesion();
     window.location.href = "login.html";
+}
+
+async function manejarAprobacion() {
+    const mensaje = document.getElementById("mensaje-evaluacion");
+
+    try {
+        await aprobarPostulacion(postulacionSeleccionada);
+        finalizarEvaluacion("Postulación aprobada correctamente.");
+    } catch (error) {
+        mensaje.textContent = error.message;
+    }
+}
+
+async function manejarRechazo() {
+    const motivo = document.getElementById("motivo-rechazo").value.trim();
+    const mensaje = document.getElementById("mensaje-evaluacion");
+
+    try {
+        await rechazarPostulacion(postulacionSeleccionada, motivo);
+        finalizarEvaluacion("Postulación rechazada correctamente.");
+    } catch (error) {
+        mensaje.textContent = error.message;
+    }
+}
+
+function finalizarEvaluacion(textoConfirmacion) {
+    document.getElementById("mensaje-evaluacion").textContent = textoConfirmacion;
+    document.getElementById("seccion-detalle").style.display = "none";
+    postulacionSeleccionada = null;
+    cargarPostulaciones();
 }

@@ -19,6 +19,7 @@
             <h2>Postulantes registrados</h2>
 
             <p id="mensaje-admin"></p>
+            <p id="mensaje-evaluacion"></p>
 
             <table id="tabla-postulaciones">
                 <thead>
@@ -38,6 +39,18 @@
         <section id="seccion-detalle" style="display: none;">
             <h2>Detalle de la postulación</h2>
             <dl id="detalle-postulacion"></dl>
+            <div id="acciones-evaluacion">
+    <button type="button" id="boton-aprobar">Aprobar</button>
+
+    <div>
+        <label for="motivo-rechazo">Motivo del rechazo:</label>
+        <textarea id="motivo-rechazo" rows="3"></textarea>
+    </div>
+
+    <button type="button" id="boton-rechazar">Rechazar</button>
+</div>
+
+
         </section>
 
     </main>

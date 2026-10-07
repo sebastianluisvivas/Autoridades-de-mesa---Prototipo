@@ -27,3 +27,19 @@ async function obtenerPostulaciones() {
 
     return await respuesta.json();
 }
+
+async function actualizarPostulacion(id, cambios) {
+    const respuesta = await fetch(`${API_URL_POSTULACIONES}/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(cambios)
+    });
+
+    if (!respuesta.ok) {
+        throw new Error("No se pudo actualizar la postulación.");
+    }
+
+    return await respuesta.json();
+}
