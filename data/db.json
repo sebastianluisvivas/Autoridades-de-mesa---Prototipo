@@ -29,7 +29,6 @@
       "hora": "18:00",
       "sedeId": "2"
     },
-
     {
       "id": "3",
       "nombre": "Capacitación sobre el proceso electoral DOS",
@@ -135,6 +134,44 @@
       "charlaInteres": "2",
       "estado": "pendiente",
       "id": "7zkHavasKSk"
+    },
+    {
+      "distrito": "San Miguel",
+      "nombre": "PRUEBADOSCHARLAS",
+      "apellido": "ELEGIDAS",
+      "dni": "111",
+      "fechaNacimiento": "2000-11-11",
+      "direccion": "asd123",
+      "telefono": "1133950314",
+      "correo": "prueba@hotmail.com",
+      "autoridadPrevia": "si",
+      "afiliado": "si",
+      "agrupacion": "pruebaSUPERPOSICIONCHARLAS",
+      "charlasInteres": [
+        "1",
+        "3"
+      ],
+      "estado": "pendiente",
+      "id": "mryVeQXIJD4"
+    },
+    {
+      "distrito": "José C. Paz",
+      "nombre": "pruebaPOSTREFACTORIZACION",
+      "apellido": "deCARPETAS",
+      "dni": "1111",
+      "fechaNacimiento": "1999-01-12",
+      "direccion": "TESTrefactorizacion",
+      "telefono": "111",
+      "correo": "asdasd@hotmail.com",
+      "autoridadPrevia": "no",
+      "afiliado": "no",
+      "agrupacion": "",
+      "charlasInteres": [
+        "1",
+        "3"
+      ],
+      "estado": "pendiente",
+      "id": "de-5RmUOtiA"
     }
   ],
   "notificaciones": [],

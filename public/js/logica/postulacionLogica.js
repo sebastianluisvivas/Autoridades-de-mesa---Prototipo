@@ -1,19 +1,6 @@
 // Contiene las reglas de negocio relacionadas con la inscripción de postulantes.
 
-function actualizarCampoAgrupacion() {
-    const afiliado = document.getElementById("afiliado").value;
-    const campoAgrupacion = document.getElementById("campo-agrupacion");
-    const agrupacion = document.getElementById("agrupacion");
 
-    if (afiliado === "si") {
-        campoAgrupacion.style.display = "block";
-        agrupacion.required = true;
-    } else {
-        campoAgrupacion.style.display = "none";
-        agrupacion.required = false;
-        agrupacion.value = "";
-    }
-}
 
 async function registrarPostulacion(datos) {
     // Valida los datos necesarios y solicita al repositorio

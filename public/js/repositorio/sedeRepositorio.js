@@ -1,9 +1,9 @@
 // Gestiona el acceso a los datos de las sedes mediante la API de json-server.
 
-const API_URL = "http://localhost:3000/sedes";
+const apiUrlSedes = "http://localhost:3000/sedes";
 
 async function obtenerSedes() {
-    const respuesta = await fetch(API_URL);
+    const respuesta = await fetch(apiUrlSedes);
 
     if (!respuesta.ok) {
         throw new Error("No se pudieron obtener las sedes.");
@@ -13,7 +13,7 @@ async function obtenerSedes() {
 }
 
 async function guardarSede(sede) {
-    const respuesta = await fetch(API_URL, {
+    const respuesta = await fetch(apiUrlSedes, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

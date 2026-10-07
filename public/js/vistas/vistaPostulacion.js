@@ -72,3 +72,18 @@ function obtenerCharlasSeleccionadas() {
 }
 
 cargarCharlasDisponibles();
+
+function actualizarCampoAgrupacion() {
+    const afiliado = document.getElementById("afiliado").value;
+    const campoAgrupacion = document.getElementById("campo-agrupacion");
+    const agrupacion = document.getElementById("agrupacion");
+
+    if (afiliado === "si") {
+        campoAgrupacion.style.display = "block";
+        agrupacion.required = true;
+    } else {
+        campoAgrupacion.style.display = "none";
+        agrupacion.required = false;
+        agrupacion.value = "";
+    }
+}

@@ -17,14 +17,13 @@ function mostrarCharlas(charlas, sedes) {
             `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${sede.nombre}`;
 
         lista.appendChild(elemento);
-    });
+});
 
 
     async function probarUbicacion(charla) {
     try {
         const ubicacion = await obtenerUbicacionCharla(charla);
 
-        console.log("Respuesta de USIG:", ubicacion);
 
         const resultados = ubicacion.direccionesNormalizadas;
 
@@ -54,5 +53,4 @@ function mostrarCharlas(charlas, sedes) {
     } catch (error) {
         console.error("Error al obtener ubicación:", error);
     }
-}
-}
+}}
