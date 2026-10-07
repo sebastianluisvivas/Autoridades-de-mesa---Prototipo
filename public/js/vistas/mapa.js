@@ -20,3 +20,20 @@ function mostrarMapa(coordenadas) {
         marcador = L.marker(posicion).addTo(mapa);
     }
 }
+
+
+async function mostrarUbicacionEnMapa(direccion) {
+    const mensaje = document.getElementById("mensaje-ubicacion");
+
+    mensaje.textContent = "Buscando ubicación...";
+
+    try {
+        const ubicacion = await obtenerUbicacionDireccion(direccion);
+
+        mostrarMapa(ubicacion.coordenadas);
+
+        mensaje.textContent = `Ubicación encontrada: ${ubicacion.direccion}`;
+    } catch (error) {
+        mensaje.textContent = error.message;
+    }
+}

@@ -1,4 +1,7 @@
 // Gestiona la presentación y actualización de la interfaz relacionada con las sedes.
+if (!haySesionAdministrador()) {
+    window.location.href = "login.html";
+}
 
 function mostrarSedes(sedes) {
     const lista = document.getElementById("lista-sedes");
@@ -9,6 +12,7 @@ function mostrarSedes(sedes) {
         const elemento = document.createElement("li");
 
         elemento.textContent = `${sede.nombre} - ${sede.direccion}`;
+        elemento.addEventListener("click", () => mostrarUbicacionEnMapa(sede.direccion));
 
         lista.appendChild(elemento);
     });
@@ -32,6 +36,7 @@ async function manejarRegistroSede(evento) {
 
         const sedes = await obtenerSedes();
         mostrarSedes(sedes);
+        mostrarUbicacionEnMapa(direccion);
 
     } catch (error) {
         mensaje.textContent = error.message;
@@ -40,3 +45,6 @@ async function manejarRegistroSede(evento) {
 
 document.getElementById("form-sede")
     .addEventListener("submit", manejarRegistroSede);
+
+
+cargarSedes();

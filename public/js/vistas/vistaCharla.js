@@ -5,52 +5,26 @@ function mostrarCharlas(charlas, sedes) {
 
     lista.innerHTML = "";
 
+    if (charlas.length === 0) {
+        const aviso = document.createElement("li");
+        aviso.textContent = "No hay charlas disponibles por el momento.";
+        lista.appendChild(aviso);
+        return;
+    }
+
     charlas.forEach(charla => {
         const sede = sedes.find(sede => sede.id === charla.sedeId);
-
         const elemento = document.createElement("li");
-        elemento.addEventListener("click", () => {
-         probarUbicacion(charla);
-        });
 
-        elemento.textContent =
-            `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${sede.nombre}`;
+        if (sede) {
+            elemento.textContent =
+                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${sede.nombre}`;
+            elemento.addEventListener("click", () => mostrarUbicacionEnMapa(sede.direccion));
+        } else {
+            elemento.textContent =
+                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede no disponible`;
+        }
 
         lista.appendChild(elemento);
-});
-
-
-    async function probarUbicacion(charla) {
-    try {
-        const ubicacion = await obtenerUbicacionCharla(charla);
-
-
-        const resultados = ubicacion.direccionesNormalizadas;
-
-        const resultado = resultados[0];
-
-        mostrarMapa(resultado.coordenadas);
-
-        const lista = document.getElementById("lista-ubicaciones");
-
-        lista.innerHTML = "";
-
-        resultados.forEach((resultado, indice) => {
-            const elemento = document.createElement("li");
-
-            elemento.textContent =
-                `${indice + 1}. ${resultado.direccion}`;
-
-            lista.appendChild(elemento);
-
-            console.log(
-                `Resultado ${indice + 1}:`,
-                resultado.direccion,
-                resultado.coordenadas
-            );
-        });
-
-    } catch (error) {
-        console.error("Error al obtener ubicación:", error);
-    }
-}}
+    });
+}

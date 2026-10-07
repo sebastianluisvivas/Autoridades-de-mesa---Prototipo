@@ -1,12 +1,12 @@
 {
-"usuarios": [
-  {
-    "id": "1",
-    "usuario": "administrador123",
-    "contrasena": "123",
-    "rol": "administrador"
-  }
-],
+  "usuarios": [
+    {
+      "id": "1",
+      "usuario": "administrador123",
+      "contrasena": "123",
+      "rol": "administrador"
+    }
+  ],
   "sedes": [
     {
       "id": "1",
@@ -59,7 +59,7 @@
       "afiliado": "si",
       "agrupacion": "prueba",
       "charlaInteres": "",
-      "estado": "pendiente",
+      "estado": "aprobada",
       "id": "SLdRJz34Dno"
     },
     {
@@ -75,8 +75,9 @@
       "afiliado": "si",
       "agrupacion": "test",
       "charlaInteres": "1",
-      "estado": "pendiente",
-      "id": "Gmei2O8EmGA"
+      "estado": "rechazada",
+      "id": "Gmei2O8EmGA",
+      "motivoRechazo": "rechazo por direccion invalida"
     },
     {
       "distrito": "Prueba",

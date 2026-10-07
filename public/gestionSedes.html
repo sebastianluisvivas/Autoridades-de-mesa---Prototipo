@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedes - Autoridades de Mesa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Gestión de sedes</h1>
+
+        <section>
+            <h2>Registrar sede</h2>
+
+            <form id="form-sede">
+                <div>
+                    <label for="nombre-sede">Nombre:</label>
+                    <input type="text" id="nombre-sede" required>
+                </div>
+
+                <div>
+                    <label for="direccion-sede">Dirección (calle, altura y localidad):</label>
+                    <input type="text" id="direccion-sede" required>
+                </div>
+
+                <button type="submit">Registrar sede</button>
+            </form>
+
+            <p id="mensaje"></p>
+        </section>
+
+        <section>
+            <h2>Sedes registradas</h2>
+            <p>Hacé clic en una sede para ver su ubicación en el mapa.</p>
+            <ul id="lista-sedes"></ul>
+
+            <p id="mensaje-ubicacion"></p>
+            <div id="mapa"></div>
+        </section>
+
+        <p>
+            <a href="admin.html">Volver a administración</a>
+        </p>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/repositorio/sedeRepositorio.js"></script>
+    <script src="js/repositorio/usigRepositorio.js"></script>
+    <script src="js/logica/sesionLogica.js"></script>
+    <script src="js/logica/sedeLogica.js"></script>
+    <script src="js/logica/ubicacionLogica.js"></script>
+    <script src="js/vistas/mapa.js"></script>
+    <script src="js/vistas/vistaSede.js"></script>
+
+</body>
+</html>
