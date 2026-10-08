@@ -445,4 +445,19 @@ dd {
 
 @media (max-width: 600px) {
     main {
-        padding: 24px 16px
+        padding: 24px 16px 40px;
+    }
+
+    section,
+    .portada {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #detalle-postulacion {
+        grid-template-columns: 1fr;
+    }
+}
