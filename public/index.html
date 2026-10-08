@@ -3,36 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoridades de Mesa</title>
+    <title>Autoridades de Mesa - Portal de convocatoria</title>
     <link rel="stylesheet" href="css/estilos.css">
-    
 </head>
 
 <body>
 
-    <main>
-        <h1>Autoridades de Mesa</h1>
+    <header class="encabezado">
+        <div class="encabezado-contenido">
+            <a href="index.html" class="marca">
+                <span class="marca-icono" aria-hidden="true">AM</span>
+                <span>
+                    <span class="marca-titulo">Autoridades de Mesa</span>
+                    <span class="marca-subtitulo">Portal de convocatoria electoral</span>
+                </span>
+            </a>
 
-        <p>
-            Portal de consulta e inscripción para autoridades de mesa.
-        </p>
+            <nav class="navegacion">
+                <a href="consultarCharlas.html">Charlas</a>
+                <a href="postulacion.html">Postularme</a>
+                <a href="admin.html">Administración</a>
+            </nav>
+        </div>
+    </header>
+    <div class="franja"></div>
+
+    <main>
+
+        <section class="portada">
+            <h1>Sumate como autoridad de mesa</h1>
+              <p>Las charlas son abiertas a toda la comunidad. Buscá por nombre, sede o dirección y tocá una charla para ver dónde se realiza.</p>
+            <p>
+                Las autoridades de mesa garantizan que la votación se desarrolle
+                de forma ordenada y transparente: abren la mesa, verifican la
+                identidad de cada elector y realizan el escrutinio al cierre.
+            </p>
+            <p>
+                Desde este portal podés informarte en las charlas de orientación
+                y postularte para cumplir este rol en tu distrito.
+            </p>
+        </section>
+
+        <div class="accesos">
+            <a class="acceso" href="consultarCharlas.html">
+                <h3>Charlas de orientación</h3>
+                <p>Consultá fechas, horarios y la ubicación de cada sede en el mapa.</p>
+            </a>
+
+            <a class="acceso" href="postulacion.html">
+                <h3>Postularme</h3>
+                <p>Completá tus datos para inscribirte como autoridad de mesa.</p>
+            </a>
+
+            <a class="acceso" href="admin.html">
+                <h3>Administración</h3>
+                <p>Acceso exclusivo para personal autorizado.</p>
+            </a>
+        </div>
 
         <section>
-            <h2>¿Qué querés hacer?</h2>
-
-            <div>
-                <a href="consultarCharlas.html">
-                    <button type="button">Consultar charlas</button>
-                </a>
-
-                <a href="postulacion.html">
-                    <button type="button">Inscribirme como postulante</button>
-                </a>
-
-                <a href="login.html">Acceso administrador</a>
-            </div>
+            <h2>¿Cómo participar?</h2>
+            <ol class="pasos">
+                <li>Asistí a una charla de orientación. Es opcional, pero recomendable.</li>
+                <li>Completá tu postulación con tus datos y tu distrito electoral.</li>
+                <li>Al cierre de la convocatoria, la autoridad electoral evalúa tu solicitud.</li>
+            </ol>
         </section>
+
     </main>
+
+    <footer class="pie">
+        Prototipo académico · Ingeniería de Software · UNGS · 2026
+    </footer>
 
 </body>
 </html>
