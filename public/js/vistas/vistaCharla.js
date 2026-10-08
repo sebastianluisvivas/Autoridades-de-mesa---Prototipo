@@ -1,6 +1,15 @@
 // Gestiona la presentación y actualización de la interfaz relacionada con las charlas.
 
-function mostrarCharlas(charlas, sedes) {
+async function cargarCharlas() {
+    try {
+        const charlas = await obtenerCharlasConSede();
+        mostrarCharlas(charlas);
+    } catch (error) {
+        document.getElementById("mensaje-ubicacion").textContent = error.message;
+    }
+}
+
+function mostrarCharlas(charlas) {
     const lista = document.getElementById("lista-charlas");
 
     lista.innerHTML = "";
@@ -13,13 +22,12 @@ function mostrarCharlas(charlas, sedes) {
     }
 
     charlas.forEach(charla => {
-        const sede = sedes.find(sede => sede.id === charla.sedeId);
         const elemento = document.createElement("li");
 
-        if (sede) {
+        if (charla.sede) {
             elemento.textContent =
-                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${sede.nombre}`;
-            elemento.addEventListener("click", () => mostrarUbicacionEnMapa(sede.direccion));
+                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${charla.sede.nombre}`;
+            elemento.addEventListener("click", () => mostrarUbicacionEnMapa(charla.sede.direccion));
         } else {
             elemento.textContent =
                 `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede no disponible`;
@@ -28,3 +36,5 @@ function mostrarCharlas(charlas, sedes) {
         lista.appendChild(elemento);
     });
 }
+
+cargarCharlas();

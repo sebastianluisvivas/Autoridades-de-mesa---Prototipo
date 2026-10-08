@@ -1,14 +1,5 @@
-// Contiene las reglas de negocio relacionadas con el registro y consulta de sedes.
-// Por ahora vamos a usarlo para coordinar la obtención de las sedes.
+// Contiene las reglas de negocio relacionadas con las sedes
 
-async function cargarSedes() {
-    try {
-        const sedes = await obtenerSedes();
-        mostrarSedes(sedes);
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 async function registrarSede(nombre, direccion) {
     // Valida los datos necesarios para registrar una sede y, si son correctos,
@@ -34,4 +25,11 @@ async function registrarSede(nombre, direccion) {
     };
 
     return await guardarSede(nuevaSede);
+}
+
+// Devuelve las sedes ordenadas alfabéticamente por nombre
+async function obtenerSedesOrdenadas() {
+    const sedes = await obtenerSedes();
+
+    return sedes.sort((a, b) => a.nombre.localeCompare(b.nombre));
 }

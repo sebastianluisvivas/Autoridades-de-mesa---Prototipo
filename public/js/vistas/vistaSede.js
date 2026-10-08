@@ -3,6 +3,18 @@ if (!haySesionAdministrador()) {
     window.location.href = "login.html";
 }
 
+
+async function cargarSedes() {
+    try {
+        const sedes = await obtenerSedesOrdenadas();
+        mostrarSedes(sedes);
+    } catch (error) {
+        document.getElementById("mensaje").textContent = error.message;
+    }
+}
+
+
+
 function mostrarSedes(sedes) {
     const lista = document.getElementById("lista-sedes");
 
@@ -34,8 +46,7 @@ async function manejarRegistroSede(evento) {
 
         document.getElementById("form-sede").reset();
 
-        const sedes = await obtenerSedes();
-        mostrarSedes(sedes);
+        await cargarSedes();
         mostrarUbicacionEnMapa(direccion);
 
     } catch (error) {

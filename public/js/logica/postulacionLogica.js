@@ -64,15 +64,6 @@ if (charlasInteres.length > 1) {
 
     
 
-    async function cargarCharlasDisponibles() {
-    try {
-        const charlas = await obtenerCharlas();
-        mostrarCharlasDisponibles(charlas);
-    } catch (error) {
-        console.error("No se pudieron cargar las charlas:", error);
-    }
-    
-}
 function tieneCharlasSuperpuestas(idsSeleccionados, charlas) {
     const horarios = charlas
         .filter(charla => idsSeleccionados.includes(charla.id))

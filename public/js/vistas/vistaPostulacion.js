@@ -60,7 +60,8 @@ async function manejarRegistroPostulacion(evento) {
         casilla.name = "charla-interes";
         casilla.value = charla.id;
 
-        etiqueta.append(casilla, ` ${charla.nombre} - ${charla.fecha} ${charla.hora}`);
+        const nombreSede = charla.sede ? charla.sede.nombre : "Sede no disponible";
+        etiqueta.append(casilla, ` ${charla.nombre} - ${charla.fecha} ${charla.hora} - ${nombreSede}`);
         contenedor.appendChild(etiqueta);
     });
 }
@@ -85,5 +86,15 @@ function actualizarCampoAgrupacion() {
         campoAgrupacion.style.display = "none";
         agrupacion.required = false;
         agrupacion.value = "";
+    }
+}
+
+async function cargarCharlasDisponibles() {
+    try {
+        const charlas = await obtenerCharlasConSede();
+        mostrarCharlasDisponibles(charlas);
+    } catch (error) {
+        document.getElementById("mensaje-postulacion").textContent =
+            "No se pudieron cargar las charlas.";
     }
 }
