@@ -1,12 +1,8 @@
-// Contiene las reglas de negocio relacionadas con las sedes
-
+// Contiene las reglas de negocio relacionadas con las sedes.
 
 async function registrarSede(nombre, direccion) {
-    // Valida los datos necesarios para registrar una sede y, si son correctos,
-    // solicita al repositorio que la guarde.
-
     if (!nombre || !direccion) {
-        throw new Error("El nombre y la dirección son obligatorios.");
+        throw new Error("Ingresá el nombre y buscá la dirección en el mapa antes de guardar.");
     }
 
     const sedes = await obtenerSedes();
@@ -19,15 +15,16 @@ async function registrarSede(nombre, direccion) {
         throw new Error("Ya existe una sede con ese nombre.");
     }
 
-    const nuevaSede = {
-        nombre: nombre,
-        direccion: direccion
-    };
+    // Se verifica la dirección con USIG y se guarda la versión normalizada.
+    const ubicacion = await obtenerUbicacionDireccion(direccion);
 
-    return await guardarSede(nuevaSede);
+    return await guardarSede({
+        nombre: nombre,
+        direccion: ubicacion.direccion
+    });
 }
 
-// Devuelve las sedes ordenadas alfabéticamente por nombre
+// Devuelve las sedes ordenadas alfabéticamente por nombre.
 async function obtenerSedesOrdenadas() {
     const sedes = await obtenerSedes();
 

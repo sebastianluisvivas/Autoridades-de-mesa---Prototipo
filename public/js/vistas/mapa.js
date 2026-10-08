@@ -33,7 +33,11 @@ async function mostrarUbicacionEnMapa(direccion) {
         mostrarMapa(ubicacion.coordenadas);
 
         mensaje.textContent = `Ubicación encontrada: ${ubicacion.direccion}`;
+
+        return ubicacion;
     } catch (error) {
         mensaje.textContent = error.message;
+
+        return null;
     }
 }

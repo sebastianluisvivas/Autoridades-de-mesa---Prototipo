@@ -10,44 +10,41 @@
 
 <body>
 
-    <main>
+    <h1>Gestión de sedes</h1>
 
-        <h1>Gestión de sedes</h1>
+<section>
+    <h2>Registrar sede</h2>
 
-        <section>
-            <h2>Registrar sede</h2>
+    <form id="form-sede" novalidate>
+        <div>
+            <label for="nombre-sede">Nombre:</label>
+            <input type="text" id="nombre-sede" required>
+        </div>
 
-            <form id="form-sede">
-                <div>
-                    <label for="nombre-sede">Nombre:</label>
-                    <input type="text" id="nombre-sede" required>
-                </div>
+        <div>
+            <label for="direccion-sede">Dirección (calle, altura y localidad):</label>
+            <input type="text" id="direccion-sede" required>
+            <button type="button" id="boton-buscar-direccion">Buscar en el mapa</button>
+        </div>
 
-                <div>
-                    <label for="direccion-sede">Dirección (calle, altura y localidad):</label>
-                    <input type="text" id="direccion-sede" required>
-                </div>
+        <p id="mensaje-ubicacion"></p>
+        <div id="mapa"></div>
 
-                <button type="submit">Registrar sede</button>
-            </form>
+        <button type="submit" id="boton-guardar-sede" disabled>Guardar sede</button>
+    </form>
 
-            <p id="mensaje"></p>
-        </section>
+    <p id="mensaje"></p>
+</section>
 
-        <section>
-            <h2>Sedes registradas</h2>
-            <p>Hacé clic en una sede para ver su ubicación en el mapa.</p>
-            <ul id="lista-sedes"></ul>
+<section>
+    <h2>Sedes registradas</h2>
+    <p>Hacé clic en una sede para ver su ubicación en el mapa.</p>
+    <ul id="lista-sedes"></ul>
+</section>
 
-            <p id="mensaje-ubicacion"></p>
-            <div id="mapa"></div>
-        </section>
-
-        <p>
-            <a href="admin.html">Volver a administración</a>
-        </p>
-
-    </main>
+<p>
+    <a href="admin.html">Volver a administración</a>
+</p>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/repositorio/datosIniciales.js"></script>

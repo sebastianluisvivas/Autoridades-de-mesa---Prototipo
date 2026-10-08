@@ -1,22 +1,33 @@
 // Gestiona la presentación y actualización de la interfaz relacionada con las charlas.
 
+let charlasCargadas = [];
+
+document.getElementById("buscador-charlas")
+    .addEventListener("input", manejarBusquedaCharlas);
+
 async function cargarCharlas() {
     try {
-        const charlas = await obtenerCharlasConSede();
-        mostrarCharlas(charlas);
+        charlasCargadas = await obtenerCharlasConSede();
+        mostrarCharlas(charlasCargadas, "No hay charlas disponibles por el momento.");
     } catch (error) {
         document.getElementById("mensaje-ubicacion").textContent = error.message;
     }
 }
 
-function mostrarCharlas(charlas) {
+function manejarBusquedaCharlas(evento) {
+    const charlasFiltradas = filtrarCharlas(charlasCargadas, evento.target.value);
+
+    mostrarCharlas(charlasFiltradas, "No se encontraron charlas para esa búsqueda.");
+}
+
+function mostrarCharlas(charlas, textoSinResultados) {
     const lista = document.getElementById("lista-charlas");
 
     lista.innerHTML = "";
 
     if (charlas.length === 0) {
         const aviso = document.createElement("li");
-        aviso.textContent = "No hay charlas disponibles por el momento.";
+        aviso.textContent = textoSinResultados;
         lista.appendChild(aviso);
         return;
     }
@@ -26,7 +37,7 @@ function mostrarCharlas(charlas) {
 
         if (charla.sede) {
             elemento.textContent =
-                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${charla.sede.nombre}`;
+                `${charla.nombre} - ${charla.fecha} ${charla.hora} - Sede: ${charla.sede.nombre} (${charla.sede.direccion})`;
             elemento.addEventListener("click", () => mostrarUbicacionEnMapa(charla.sede.direccion));
         } else {
             elemento.textContent =
