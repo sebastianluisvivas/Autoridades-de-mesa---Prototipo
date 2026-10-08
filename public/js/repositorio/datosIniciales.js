@@ -5,8 +5,10 @@ const DATOS_INICIALES = {
         { id: "1", usuario: "administrador123", contrasena: "123", rol: "administrador" }
     ],
     sedes: [
-        { id: "1", nombre: "Universidad Nacional de General Sarmiento", direccion: "Juan María Gutiérrez 1150, Los Polvorines" },
-        { id: "2", nombre: "Sede San Miguel", direccion: "Av. Dr. Ricardo Balbín 1617, San Miguel" }
+        { id: "1", nombre: "Sede Núñez", direccion: "Alcorta 7597, CABA" },
+        { id: "2", nombre: "Sede San Miguel", direccion: "Av. Dr. Ricardo Balbín 1617, San Miguel" },
+        { id: "3", nombre: "Sede La Boca", direccion: "Brandsen 805, CABA" }
+
     ],
     charlas: [
         {
@@ -31,7 +33,7 @@ const DATOS_INICIALES = {
             tema: "Conteo de votos y confección de actas",
             fecha: "2026-10-27",
             hora: "17:00",
-            sedeId: "1"
+            sedeId: "3"
         }
     ],
     postulaciones: [
